@@ -1,5 +1,6 @@
 import { WebSocketServer, type WebSocket } from "ws"
-import crypto from "crypto"
+import * as crypto from "crypto";
+
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 8080;
 const wss = new WebSocketServer({ port: PORT });
