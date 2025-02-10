@@ -18,8 +18,8 @@ function generateRoomCode(): string {
   return crypto.randomBytes(3).toString("hex")
 }
 
-wss.on("connection", (socket) => {
-  socket.on("message", (message) => {
+wss.on("connection", (socket: WebSocket) => {
+  socket.on("message", (message: string) => {
     const parsedMessage = JSON.parse(message as unknown as string)
 
     if (parsedMessage.type === "create") {
